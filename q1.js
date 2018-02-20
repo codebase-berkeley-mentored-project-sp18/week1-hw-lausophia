@@ -35,5 +35,5 @@ function makeFilter(f, g, h) {
     }
     return x;
   };
-  return p(x);
+  return p;
 }

@@ -16,11 +16,11 @@ Example:
 */
 function censorBadWords(inputStr, badWords) {
   var words = inputStr.split(" ");
-  words.map(function(word){
+  var goodwords = words.map(function(word){
     if (badWords.indexOf(word) !== -1){
       return "*CENSORED*";
     }
     return word;
   });
-  return words.join(" ");
+  return goodwords.join(" ");
 }
