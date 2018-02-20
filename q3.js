@@ -22,7 +22,18 @@ Example:
 --> 3
 */
 function getObjectNestingDepth(inputObject) {
-  //================
-  // YOUR CODE HERE
-  //================
+  var max_d = 0;
+  var k = Object.keys(inputObject);
+  if (k.length === 0){
+    return 1;
+  }
+  k.forEach(function(key){
+    if (inputObject[key] instanceof Object){
+      var nested_d = getObjectNestingDepth(inputObject[key]);
+      if (nested_d > max_d){
+        max_d = nested_d;
+      }
+    }
+  });
+  return 1 + max_d;
 }
